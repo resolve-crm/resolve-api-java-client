@@ -1,13 +1,11 @@
 package com.resolve.api;
 
 import com.resolve.api.resource.Resource;
-import com.resolve.api.resource.BaseResource;
 
 /**
  * Resolve API client
  *
- * @author Rene Korss <rene.korss@gmail.com>
- * @license MIT
+ * @author Rene Korss (rene.korss@gmail.com)
  */
 public class ResolveClient
 {
@@ -63,7 +61,7 @@ public class ResolveClient
     /**
      * Sanitize resource name
      *
-     * @param resourceName
+     * @param resourceName Resource name
      *
      * @return string Sanitized resource name
      */
@@ -94,5 +92,18 @@ public class ResolveClient
         }  catch (ClassNotFoundException e) {
             return false;
         }
+    }
+
+    /**
+     * Set API version
+     *
+     * @param version API version
+     *
+     * @return this
+     */
+    public ResolveClient setVersion(String version)
+    {
+        this.version = version;
+        return this;
     }
 }

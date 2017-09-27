@@ -3,12 +3,12 @@ package com.resolve.api;
 import com.resolve.api.resource.Objects;
 import com.resolve.api.response.ItemResponse;
 import com.resolve.api.response.ItemResponseItem;
-import com.resolve.api.response.ItemsResponse;
 import com.resolve.api.response.ItemsResponseItem;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import org.json.JSONObject;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.CoreMatchers.instanceOf;
 
 import java.util.List;
 
@@ -43,9 +43,8 @@ public class ResolveClientTest extends TestCase
      */
     public void testGetResource() throws Exception
     {
-
-        Objects objects = null;
-        objects = (Objects)this.client.resource("objects");
+        Objects objects = (Objects) this.client.resource("objects");
+        assertThat(objects, instanceOf(Objects.class));
     }
 
     /**
@@ -65,16 +64,12 @@ public class ResolveClientTest extends TestCase
      */
     public void testGetResourceItems() throws Exception
     {
-
         Objects objects = null;
         objects = (Objects)this.client.resource("objects");
 
         List<ItemsResponseItem> items = objects.getMany().getItems();
 
-        //Assert.
-        for (ItemsResponseItem item: items) {
-            System.out.println(item.getId());
-        }
+        assertEquals(2, items.size());
     }
 
     /**
@@ -82,13 +77,26 @@ public class ResolveClientTest extends TestCase
      */
     public void testGetResourceItem() throws Exception
     {
-
         Objects objects = null;
         objects = (Objects)this.client.resource("objects");
 
         ItemResponse itemResponse = objects.getOne(1);
         ItemResponseItem item = itemResponse.getItem();
 
-        System.out.println(item.getId());
+        assertEquals(1, item.getId());
+    }
+
+    /**
+     * Test if we can set new version
+     */
+    public void testCanSetVersion() throws Exception
+    {
+        ResolveClient client = this.client.setVersion("2.0.1");
+
+        // Changed version
+        assertEquals("2.0.1", this.client.version);
+
+        // Returned client
+        assertEquals(this.client, client);
     }
 }

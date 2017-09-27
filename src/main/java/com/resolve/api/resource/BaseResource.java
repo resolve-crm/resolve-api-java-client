@@ -23,6 +23,8 @@ abstract public class BaseResource implements Resource
     /**
      * Method to get all items response
      *
+     * @throws Exception Exception if not request failed
+     *
      * @return ItemsResponse
      */
     public ItemsResponse getMany() throws Exception
@@ -43,6 +45,10 @@ abstract public class BaseResource implements Resource
 
     /**
      * Method to get one item response
+     *
+     * @param id Item ID
+     *
+     * @throws Exception Exception if not request failed
      *
      * @return ItemResponse
      */
@@ -75,12 +81,13 @@ abstract public class BaseResource implements Resource
     /**
      * Set client
      *
-     * @param ResolveClient Resolve API client
+     * @param client Resolve API client
      *
-     * @return void
+     * @return this
      */
-    public void setClient(ResolveClient client)
+    public Resource setClient(ResolveClient client)
     {
         this.client = client;
+        return this;
     }
 }
