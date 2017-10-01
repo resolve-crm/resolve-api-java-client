@@ -1,11 +1,11 @@
 package com.resolve.api.resource;
 
 /**
- * Objects resource class
+ * Wishes resource class
  *
  * @author Rene Korss
  */
-public class Objects extends BaseResource
+public class Wishes extends BaseResource
 {
 
 }

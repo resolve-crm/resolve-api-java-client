@@ -10,4 +10,14 @@ abstract class BaseResponse
     {
         this.httpResponse = response;
     }
+
+    /**
+     * Get original httpResponse
+     *
+     * @return HttpResponse HTTP reponse
+     */
+    public HttpResponse getHttpResponse()
+    {
+        return this.httpResponse;
+    }
 }

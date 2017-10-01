@@ -1,11 +1,11 @@
 package com.resolve.api.resource;
 
 /**
- * Objects resource class
+ * Tags resource class
  *
  * @author Rene Korss
  */
-public class Objects extends BaseResource
+public class Tags extends BaseResource
 {
 
 }

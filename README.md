@@ -25,8 +25,8 @@ ItemResponseItem item = itemResponse.getItem();
 ````
 
 ## TODO
-- [ ] Add support to get by date, status for `getMany()`.
-- [ ] Support all resources
+- [X] Add support to get by date, status for `getMany()`.
+- [X] Support all resources
 - [ ] Feature to get tags, files and clients related to item (`includeTags`, `includeFiles`, `includeClients`)
 - [ ] Feature to add custom query params
 - [ ] Cache support
