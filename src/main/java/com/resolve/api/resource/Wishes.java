@@ -5,7 +5,7 @@ package com.resolve.api.resource;
  *
  * @author Rene Korss
  */
-public class Wishes extends BaseResource
+public final class Wishes extends BaseResource
 {
 
 }

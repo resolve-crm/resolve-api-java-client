@@ -7,22 +7,22 @@ import com.resolve.api.resource.Resource;
  *
  * @author Rene Korss (rene.korss@gmail.com)
  */
-public class ResolveClient
+public final class ResolveClient
 {
     /**
      *  Base API URL
      */
-    public String baseUrl = "https://resolve.ee/api/";
+    private static final String BASE_URL = "https://resolve.ee/api/";
 
     /**
      *  API version used
      */
-    public String version = "2.0.0";
+    private String version = "2.0.0";
 
     /**
      * API key
      */
-    public String apiKey;
+    private String apiKey;
 
     /**
      * Constructor
@@ -65,7 +65,7 @@ public class ResolveClient
      *
      * @return string Sanitized resource name
      */
-    protected String sanitizeResourceName(String resourceName)
+    private String sanitizeResourceName(String resourceName)
     {
         if (!resourceName.contains("com.resolve.api.resource.")) {
             // Uppercase resource name
@@ -105,5 +105,35 @@ public class ResolveClient
     {
         this.version = version;
         return this;
+    }
+
+    /**
+     * Get API version
+     *
+     * @return string API version
+     */
+    public String getVersion()
+    {
+        return version;
+    }
+
+    /**
+     * Get API key
+     *
+     * @return string API key
+     */
+    public String getApiKey()
+    {
+        return apiKey;
+    }
+
+    /**
+     * Get API base URL
+     *
+     * @return string API base URL
+     */
+    public String getBaseUrl()
+    {
+        return BASE_URL;
     }
 }

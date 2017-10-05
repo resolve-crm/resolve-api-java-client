@@ -152,7 +152,7 @@ public class ResolveClientTest extends TestCase
         ResolveClient client = this.client.setVersion("2.0.1");
 
         // Changed version
-        assertEquals("2.0.1", this.client.version);
+        assertEquals("2.0.1", this.client.getVersion());
 
         // Returned client
         assertEquals(this.client, client);

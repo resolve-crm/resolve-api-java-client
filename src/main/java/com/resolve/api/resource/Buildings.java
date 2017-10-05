@@ -5,7 +5,7 @@ package com.resolve.api.resource;
  *
  * @author Rene Korss
  */
-public class Buildings extends BaseResource
+public final class Buildings extends BaseResource
 {
 
 }

@@ -5,7 +5,7 @@ package com.resolve.api.resource;
  *
  * @author Rene Korss
  */
-public class Tags extends BaseResource
+public final class Tags extends BaseResource
 {
 
 }

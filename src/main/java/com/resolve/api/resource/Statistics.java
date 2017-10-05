@@ -5,7 +5,7 @@ package com.resolve.api.resource;
  *
  * @author Rene Korss
  */
-public class Statistics extends BaseResource
+public final class Statistics extends BaseResource
 {
 
 }

@@ -5,7 +5,7 @@ package com.resolve.api.resource;
  *
  * @author Rene Korss
  */
-public class Brokers extends BaseResource
+public final class Brokers extends BaseResource
 {
 
 }

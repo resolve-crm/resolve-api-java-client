@@ -70,9 +70,9 @@ abstract public class BaseResource implements Resource
     {
         HttpResponse httpResponse = null;
         try {
-            httpResponse = Unirest.get(this.client.baseUrl + this.getEndpoint() + uri)
-                .header("Accept", "application/json; version=" + this.client.version)
-                .queryString("apiKey", this.client.apiKey)
+            httpResponse = Unirest.get(this.client.getBaseUrl() + this.getEndpoint() + uri)
+                .header("Accept", "application/json; version=" + this.client.getVersion())
+                .queryString("apiKey", this.client.getApiKey())
                 .asJson();
         } catch (UnirestException e) {
             throw new Exception(e.getMessage());
@@ -95,9 +95,9 @@ abstract public class BaseResource implements Resource
     {
         HttpResponse httpResponse = null;
         try {
-            httpResponse = Unirest.get(this.client.baseUrl + this.getEndpoint() + "/" + id)
-                    .header("Accept", "application/json; version=" + this.client.version)
-                    .queryString("apiKey", this.client.apiKey)
+            httpResponse = Unirest.get(this.client.getBaseUrl() + this.getEndpoint() + "/" + id)
+                    .header("Accept", "application/json; version=" + this.client.getVersion())
+                    .queryString("apiKey", this.client.getApiKey())
                     .asJson();
         } catch (UnirestException e) {
             throw new Exception(e.getMessage());

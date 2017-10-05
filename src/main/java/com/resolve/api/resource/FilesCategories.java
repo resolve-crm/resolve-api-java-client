@@ -5,13 +5,9 @@ package com.resolve.api.resource;
  *
  * @author Rene Korss
  */
-public class FilesCategories extends BaseResource
+public final class FilesCategories extends BaseResource
 {
-    /**
-     * Get resource endpoint
-     *
-     * @return string Endpoint
-     */
+    @Override
     public String getEndpoint()
     {
         return "files/categories";
