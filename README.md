@@ -10,7 +10,7 @@ import com.resolve.api.response.ItemResponseItem;
 import com.resolve.api.response.ItemsResponseItem;
 
 // Init client
-ResolveClient client = new ResolveClient("djI=@NPnHvWT3pwmgQ5Tr");
+ResolveClient client = new ResolveClient("YOUR_API_KEY");
 
 // Get resource
 Objects objectsResource = client.getResource("objects");

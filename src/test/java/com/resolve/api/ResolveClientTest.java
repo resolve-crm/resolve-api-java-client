@@ -30,7 +30,7 @@ public class ResolveClientTest extends TestCase
     public ResolveClientTest(String testName )
     {
         super( testName );
-        this.client = new ResolveClient("djI=@NPnHvWT3pwmgQ5Tr");
+        this.client = new ResolveClient("FAKE_API_KEY");
     }
 
     /**
